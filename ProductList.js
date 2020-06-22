@@ -1,11 +1,11 @@
 import React from 'react';
-import { Content } from 'native-base';
+import { Content, H1 } from 'native-base';
 import ProductCard from './ProductCard';
 
 export default function ProductList() {
 
     const getProducts = () => {
-        return [
+        return [/*
         { 
             imageUrl: "http://loremflickr.com/150/150?random=1",
             productName: "Product 1",
@@ -29,7 +29,7 @@ export default function ProductList() {
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor, tellus laoreet venenatis facilisis, enim ex faucibus nulla, id rutrum ligula purus sit amet mauris. ",        
             rating: 5,
             numOfReviews: 2
-        }];
+        }*/];
       };  
 
     const products = getProducts();
@@ -41,7 +41,12 @@ export default function ProductList() {
   
     return (    
         <Content>
-            {listProducts}
+            {listProducts.length > 0 ? ( 
+                <Content>{listProducts}</Content>     
+            ) : (         
+            <H1>No Products to display</H1>     
+            )} 
+          
         </Content>    
     );
 }
